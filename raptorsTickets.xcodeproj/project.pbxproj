@@ -17,6 +17,7 @@
 		531092A1234C3A7B00AA48AB /* raptorsTicketsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 531092A0234C3A7B00AA48AB /* raptorsTicketsUITests.m */; };
 		531092B0234F917000AA48AB /* Ticket.m in Sources */ = {isa = PBXBuildFile; fileRef = 531092AF234F917000AA48AB /* Ticket.m */; };
 		531092B3234F939400AA48AB /* TicketBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 531092B2234F939400AA48AB /* TicketBase.m */; };
+		5372ADD3235561D5007F773C /* ManagerNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5372ADD2235561D5007F773C /* ManagerNavigationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		531092AF234F917000AA48AB /* Ticket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Ticket.m; sourceTree = "<group>"; };
 		531092B1234F939400AA48AB /* TicketBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketBase.h; sourceTree = "<group>"; };
 		531092B2234F939400AA48AB /* TicketBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketBase.m; sourceTree = "<group>"; };
+		5372ADD1235561D5007F773C /* ManagerNavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ManagerNavigationViewController.h; sourceTree = "<group>"; };
+		5372ADD2235561D5007F773C /* ManagerNavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ManagerNavigationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,8 @@
 				531092AF234F917000AA48AB /* Ticket.m */,
 				531092B1234F939400AA48AB /* TicketBase.h */,
 				531092B2234F939400AA48AB /* TicketBase.m */,
+				5372ADD1235561D5007F773C /* ManagerNavigationViewController.h */,
+				5372ADD2235561D5007F773C /* ManagerNavigationViewController.m */,
 			);
 			path = raptorsTickets;
 			sourceTree = "<group>";
@@ -277,6 +282,7 @@
 			files = (
 				53109281234C3A7B00AA48AB /* ViewController.m in Sources */,
 				5310928C234C3A7B00AA48AB /* main.m in Sources */,
+				5372ADD3235561D5007F773C /* ManagerNavigationViewController.m in Sources */,
 				5310927E234C3A7B00AA48AB /* AppDelegate.m in Sources */,
 				531092B3234F939400AA48AB /* TicketBase.m in Sources */,
 				531092B0234F917000AA48AB /* Ticket.m in Sources */,
