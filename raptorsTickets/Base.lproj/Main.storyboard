@@ -100,7 +100,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Manager"/>
                                 <connections>
-                                    <segue destination="XqQ-ja-yAQ" kind="show" id="PK6-53-wmT"/>
+                                    <action selector="onManagerClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8sQ-gf-4Sx"/>
+                                    <segue destination="XqQ-ja-yAQ" kind="show" identifier="0" id="PK6-53-wmT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -119,10 +120,10 @@
             </objects>
             <point key="canvasLocation" x="56.799999999999997" y="-574.36281859070471"/>
         </scene>
-        <!--View Controller-->
+        <!--Ticket Modification View Controller-->
         <scene sceneID="y4l-yd-oJ2">
             <objects>
-                <viewController id="76N-0V-am0" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="3" id="76N-0V-am0" customClass="TicketModificationViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VLt-uJ-pk4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -145,7 +146,7 @@
                                 <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FAz-Vx-6y6">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quantity" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FAz-Vx-6y6">
                                 <rect key="frame" x="257" y="272" width="102" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" hint="Please enter quantity of tickets" identifier="132" label="Ticket quqntity">
@@ -155,7 +156,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
-                                    <action selector="onQuantityEdit:" destination="BYZ-38-t0r" eventType="editingChanged" id="f4Q-GU-MIg"/>
+                                    <action selector="onQuantityChange:" destination="76N-0V-am0" eventType="editingChanged" id="6Lf-9I-dPR"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ticket Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jP3-Bc-vXg">
@@ -165,7 +166,7 @@
                                 <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1lm-ea-7jY">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1lm-ea-7jY">
                                 <rect key="frame" x="257" y="348" width="102" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" hint="Please enter quantity of tickets" identifier="132" label="Ticket quqntity">
@@ -173,9 +174,9 @@
                                 </accessibility>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <connections>
-                                    <action selector="onQuantityEdit:" destination="BYZ-38-t0r" eventType="editingChanged" id="8Iu-2n-M9F"/>
+                                    <action selector="onPriceChange:" destination="76N-0V-am0" eventType="editingChanged" id="yPR-Io-dOg"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYM-NH-pxO">
@@ -187,7 +188,8 @@
                                     <color key="titleShadowColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="onBuy:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qlv-Yh-3P2"/>
+                                    <action selector="onSave:" destination="76N-0V-am0" eventType="touchUpInside" id="rye-E6-tZk"/>
+                                    <segue destination="XqQ-ja-yAQ" kind="show" identifier="2" id="wEu-1N-9mP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDS-LA-Af7">
@@ -198,13 +200,26 @@
                                     <color key="titleShadowColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="onBuy:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GvA-ri-6xP"/>
+                                    <action selector="onCancel:" destination="76N-0V-am0" eventType="touchUpInside" id="Rz8-03-pkh"/>
+                                    <segue destination="XqQ-ja-yAQ" kind="show" identifier="3" id="TYs-eS-odw"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIf-mq-jS7">
+                                <rect key="frame" x="238" y="353" width="11" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="6pz-l1-p5b"/>
                     </view>
+                    <connections>
+                        <outlet property="picker" destination="dV5-3j-tzf" id="PmZ-hv-yFL"/>
+                        <outlet property="price" destination="1lm-ea-7jY" id="cxO-m4-Pl7"/>
+                        <outlet property="quantity" destination="FAz-Vx-6y6" id="j4a-ks-SG9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WjL-KI-zpH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -238,7 +253,15 @@
                                 </state>
                                 <connections>
                                     <action selector="onBuy:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OAg-2A-NCv"/>
-                                    <segue destination="76N-0V-am0" kind="show" id="E69-b0-3NK"/>
+                                    <segue destination="76N-0V-am0" kind="show" identifier="1" id="E69-b0-3NK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tEZ-IY-vfz">
+                                <rect key="frame" x="158" y="572" width="58" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="To Cart"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="4" id="7Yh-oy-8VC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -251,4 +274,8 @@
             <point key="canvasLocation" x="57" y="133"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="E69-b0-3NK"/>
+        <segue reference="wEu-1N-9mP"/>
+    </inferredMetricsTieBreakers>
 </document>

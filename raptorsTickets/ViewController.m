@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "TicketBase.h"
 #import "Ticket.h"
+#import "ManagerNavigationViewController.h";
 
 @interface ViewController ()
 
@@ -22,21 +23,23 @@
     self.picker.delegate = self;
     self.quantityRequired.text = @"1";
     // setup the db and load some data into it
-    self.ticketBase = [TicketBase alloc];
-    Ticket *t1 = [Ticket alloc];
-    t1 = [
-          t1 initWithName:@"First Row"
-          price: [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithDouble:200.99]decimalValue]]
-          andQuantity:40
-    ];
-    [self.ticketBase.db addObject:t1];
-    Ticket *t2 = [Ticket alloc];
-    t2 = [
-          t2 initWithName:@"Second Row"
-          price: [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithDouble:100.99]decimalValue]]
-          andQuantity:300
-          ];
-    [self.ticketBase.db addObject:t2];
+    if (!self.ticketBase) {
+        self.ticketBase = [TicketBase alloc];
+        Ticket *t1 = [Ticket alloc];
+        t1 = [
+              t1 initWithName:@"First Row"
+              price: [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithDouble:200.99]decimalValue]]
+              andQuantity:40
+              ];
+        [self.ticketBase.db addObject:t1];
+        Ticket *t2 = [Ticket alloc];
+        t2 = [
+              t2 initWithName:@"Second Row"
+              price: [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithDouble:100.99]decimalValue]]
+              andQuantity:300
+              ];
+        [self.ticketBase.db addObject:t2];
+    }
 }
 
 // returns the number of 'columns' to display.
@@ -101,8 +104,12 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)onManagerClick:(UIButton *)sender {
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    ManagerNavigationViewController *managerNavigation = (ManagerNavigationViewController *)[segue destinationViewController];
+    [managerNavigation setTicketBase:self.ticketBase];
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }

@@ -5,8 +5,9 @@
 //  Created by Emil Iakoupov on 2019-10-14.
 //  Copyright © 2019 Emil Iakoupov. All rights reserved.
 //
-
 #import "ManagerNavigationViewController.h"
+#import "TicketModificationViewController.h"
+#import "ViewController.h"
 
 @interface ManagerNavigationViewController ()
 
@@ -26,8 +27,15 @@
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    if ([[segue identifier] isEqualToString:@"4"]) {
+        ViewController *destination = (ViewController *)[segue destinationViewController];
+        [destination setTicketBase:self.ticketBase];
+    } else if ([[segue identifier] isEqualToString:@"1"]) {
+        TicketModificationViewController *destination = (TicketModificationViewController *)[segue destinationViewController];
+        [destination setTicketBase:self.ticketBase];
+    }
+   
 }
 
 

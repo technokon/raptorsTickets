@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TicketBase.h"
 
 @interface ManagerNavigationViewController : UIViewController
+
+@property (nonatomic, strong) TicketBase *ticketBase;
 
 @end
