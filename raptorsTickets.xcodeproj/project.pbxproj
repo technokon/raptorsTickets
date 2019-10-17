@@ -19,6 +19,7 @@
 		531092B3234F939400AA48AB /* TicketBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 531092B2234F939400AA48AB /* TicketBase.m */; };
 		5372ADD3235561D5007F773C /* ManagerNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5372ADD2235561D5007F773C /* ManagerNavigationViewController.m */; };
 		5372ADD62358B846007F773C /* TicketModificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5372ADD52358B846007F773C /* TicketModificationViewController.m */; };
+		5372ADD923590AC3007F773C /* Purchase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5372ADD823590AC3007F773C /* Purchase.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		5372ADD2235561D5007F773C /* ManagerNavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ManagerNavigationViewController.m; sourceTree = "<group>"; };
 		5372ADD42358B846007F773C /* TicketModificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketModificationViewController.h; sourceTree = "<group>"; };
 		5372ADD52358B846007F773C /* TicketModificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketModificationViewController.m; sourceTree = "<group>"; };
+		5372ADD723590AC3007F773C /* Purchase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Purchase.h; sourceTree = "<group>"; };
+		5372ADD823590AC3007F773C /* Purchase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Purchase.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +133,8 @@
 				5372ADD2235561D5007F773C /* ManagerNavigationViewController.m */,
 				5372ADD42358B846007F773C /* TicketModificationViewController.h */,
 				5372ADD52358B846007F773C /* TicketModificationViewController.m */,
+				5372ADD723590AC3007F773C /* Purchase.h */,
+				5372ADD823590AC3007F773C /* Purchase.m */,
 			);
 			path = raptorsTickets;
 			sourceTree = "<group>";
@@ -285,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5372ADD923590AC3007F773C /* Purchase.m in Sources */,
 				53109281234C3A7B00AA48AB /* ViewController.m in Sources */,
 				5310928C234C3A7B00AA48AB /* main.m in Sources */,
 				5372ADD3235561D5007F773C /* ManagerNavigationViewController.m in Sources */,

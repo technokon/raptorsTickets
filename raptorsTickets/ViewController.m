@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "TicketBase.h"
 #import "Ticket.h"
+#import "Purchase.h"
 #import "ManagerNavigationViewController.h";
 
 @interface ViewController ()
@@ -94,6 +95,11 @@
         
         NSString *seatName = self.selectedTicket.name;
         self.confirmationMessage.text = [NSString stringWithFormat:@"You have successfully purchased %d tickets for %@", qRequired, seatName];
+        Purchase *purchase = [Purchase alloc];
+        NSString *totalStr = self.total.text;
+        NSDecimalNumber *total = [NSDecimalNumber decimalNumberWithString: totalStr];
+        purchase = [purchase initWithItem:seatName total:total andQuantity:qRequired];
+        [self.ticketBase.purchases addObject:purchase];
     } else {
         self.confirmationMessage.text = [NSString stringWithFormat:@"There is only %ld available for this seat", self.selectedTicket.quantity];
     }

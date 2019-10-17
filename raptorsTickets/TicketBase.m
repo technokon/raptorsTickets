@@ -17,4 +17,11 @@
     return _db;
 }
 
+-(NSMutableArray *) purchases {
+    if (!_purchases) {
+        _purchases = [[NSMutableArray alloc] init];
+    }
+    return _purchases;
+}
+
 @end
