@@ -7,6 +7,7 @@
 //
 #import "ManagerNavigationViewController.h"
 #import "TicketModificationViewController.h"
+#import "PurchaseListViewController.h"
 #import "ViewController.h"
 
 @interface ManagerNavigationViewController ()
@@ -33,6 +34,9 @@
         [destination setTicketBase:self.ticketBase];
     } else if ([[segue identifier] isEqualToString:@"1"]) {
         TicketModificationViewController *destination = (TicketModificationViewController *)[segue destinationViewController];
+        [destination setTicketBase:self.ticketBase];
+    } else if ([[segue identifier] isEqualToString:@"5"]) {
+        PurchaseListViewController *destination = (PurchaseListViewController *)[segue destinationViewController];
         [destination setTicketBase:self.ticketBase];
     }
    
