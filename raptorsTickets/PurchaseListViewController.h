@@ -14,5 +14,6 @@
 
 @property (nonatomic, strong) TicketBase *ticketBase;
 @property (weak, nonatomic) IBOutlet UITableView *table;
+@property (nonatomic, assign) NSInteger selectedRow;
 
 @end

@@ -70,6 +70,11 @@
 }
 
 -(void) calculateAndSetTotal {
+    NSDecimalNumber *total = [self calculateTotal];
+    self.total.text = [NSString stringWithFormat:@"$%@", total];
+}
+
+-(NSDecimalNumber *) calculateTotal {
     Ticket *t = self.selectedTicket;
     self.seatsLeft.text = [NSString stringWithFormat:@"%ld", t.quantity];
     
@@ -82,7 +87,7 @@
     
     NSDecimalNumber *total = [t.price decimalNumberByMultiplyingBy:q];
     
-    self.total.text = [NSString stringWithFormat:@"$%@", total];
+    return total;
 }
 
 - (IBAction)onBuy:(UIButton *)sender {
@@ -96,8 +101,7 @@
         NSString *seatName = self.selectedTicket.name;
         self.confirmationMessage.text = [NSString stringWithFormat:@"You have successfully purchased %d tickets for %@", qRequired, seatName];
         Purchase *purchase = [Purchase alloc];
-        NSString *totalStr = self.total.text;
-        NSDecimalNumber *total = [NSDecimalNumber decimalNumberWithString: totalStr];
+        NSDecimalNumber *total = [self calculateTotal];
         purchase = [purchase initWithItem:seatName total:total andQuantity:qRequired];
         [self.ticketBase.purchases addObject:purchase];
     } else {
